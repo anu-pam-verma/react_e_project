@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 const Card =()=>{
     return(
         <div className="card">
@@ -18,16 +19,19 @@ const Card =()=>{
 }
 
 const Body = () => {
+
+  // const fetchdata = async () => {
+        
+  //   // const data = await fetch("");
+
+  // }
+
+  // useEffect(()=>{
+  //   fetchdata()
+  // },[])
+
   return (
     <main className="body">
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
       <Card/>
       <Card/>
       <Card/>

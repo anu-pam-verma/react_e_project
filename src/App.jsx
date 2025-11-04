@@ -7,6 +7,9 @@ import Header from './Component/Header'
 import Search from './Component/Search'
 import Footer from './Component/Footer'
 import Body from './Component/Body'
+import { createBrowserRouter,RouterProvider,Outlet } from 'react-router-dom'
+import About from './Component/About'
+import Contact from './Component/Contact'
 
 
 const AppLayout=()=>{
@@ -14,12 +17,37 @@ const AppLayout=()=>{
   <>
    <Header/>
    <Search/>
-   <Body/>
+   {/* <Body/> */}
+   <Outlet/>
    <Footer/>
   </>
   )
 }
 
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<AppLayout/>,
+    children:[
+      {
+        path:'/',
+        element:<Body/>
+      },
+      {
+        path:'/About',
+        element:<About/>
+      },
+      {
+        path:'/Contact',
+        element:<Contact/>
+      }
+    ]
+  },
+  {
+    errorElement:<Error/>
+  }
+])
+
 createRoot(document.getElementById('root')).render(
-    <AppLayout />
+    <RouterProvider router={router}/>
 )
