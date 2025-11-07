@@ -1,7 +1,6 @@
 const Search=()=>{
   return (
    <div className="search-container">
-      {/*<h2>Search Something</h2>*/}
       <div className="search-box">
         <input
           type="text"

@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { createRoot } from 'react-dom/client'
 import Header from './Component/Header'
@@ -8,16 +5,17 @@ import Search from './Component/Search'
 import Footer from './Component/Footer'
 import Body from './Component/Body'
 import { createBrowserRouter,RouterProvider,Outlet } from 'react-router-dom'
-import About from './Component/About'
-import Contact from './Component/Contact'
-
+// import About from './Component/About'
+// import Contact from './Component/Contact'
+import { lazy, Suspense } from 'react'
+const About  = lazy(()=>import('./Component/About'))
+const Contact = lazy(()=>import('./Component/Contact'))
 
 const AppLayout=()=>{
   return(
   <>
    <Header/>
    <Search/>
-   {/* <Body/> */}
    <Outlet/>
    <Footer/>
   </>
@@ -35,16 +33,13 @@ const router = createBrowserRouter([
       },
       {
         path:'/About',
-        element:<About/>
+        element:<Suspense fallback={<div>Loading........</div>}><About/></Suspense>
       },
       {
         path:'/Contact',
         element:<Contact/>
       }
     ]
-  },
-  {
-    errorElement:<Error/>
   }
 ])
 

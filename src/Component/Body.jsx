@@ -25,7 +25,7 @@ const Body = () => {
   //   // const data = await fetch("");
 
   // }
-
+  
   // useEffect(()=>{
   //   fetchdata()
   // },[])
