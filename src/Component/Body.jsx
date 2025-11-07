@@ -8,7 +8,7 @@ const Card =()=>{
         className="card-image"
       />
       <div className="card-content">
-        <h2 className="card-title">React UI Card</h2>
+        <h2 className="text-3xl font-bold underline">React UI Card</h2>
         <p className="card-text">
           This is a beautiful card built using React and CSS. You can use it to display product info, profiles, or anything else.
         </p>
