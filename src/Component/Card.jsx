@@ -1,8 +1,8 @@
 const Card = (props) => {
   
-    const {id,imageAlt,imageSrc,href,name,color,price} = props.productlist;
- return(
-           <div className="group relative">
+  const {id,imageAlt,imageSrc,href,name,color,price} = props.productlist;
+  return(
+           <div className="group">
               <img
                 alt={imageAlt}
                 src={imageSrc}
@@ -21,16 +21,15 @@ const Card = (props) => {
                 <p className="text-sm font-medium text-gray-900">{price}</p>
               </div>
             </div>
-
  )
 }
 
 export const ParmotedCard = (Card) => {
- return ()=>{
+ return (props)=>{
     return(
         <div>
-           <label>Promoted</label>
-           <Card/>
+           <label className="absolute font bg-black text-white p-2 m-2 rounded-lg">Promoted</label>
+           <Card {...props}/>
         </div>
     )
  }

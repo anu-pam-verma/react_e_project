@@ -8,6 +8,7 @@ import { createBrowserRouter,RouterProvider,Outlet } from 'react-router-dom'
 // import About from './Component/About'
 // import Contact from './Component/Contact'
 import { lazy, Suspense } from 'react'
+import Details from './Component/Details'
 const About  = lazy(()=>import('./Component/About'))
 const Contact = lazy(()=>import('./Component/Contact'))
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:'/Contact',
         element:<Contact/>
+      },
+      {
+        path:'details/:id',
+        element:<Details/>
       }
     ]
   }
